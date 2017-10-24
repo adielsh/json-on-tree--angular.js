@@ -1,0 +1,18 @@
+.angular-ui-tree-handle {
+  padding: 10px 10px;
+}
+
+.angular-ui-tree-handle:hover {
+  background: #a3c6ff;
+  cursor : pointer;
+}
+ul{
+  list-style-type:none;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<script src="/static-scripts/angular/angular.js"></script>
+<script src="/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+<div ng-app="myApp">
+  <div ng-controller="myCtrl">
+    <!-- Nested node template -->
+    <script type="text/ng-template" id="nodes_renderer.html">
+      <div class="angular-ui-tree-handle" ng-click="showMyChilds(node)">
+        {{node.name}}   
+      </div>
+      <ul  ng-if="doesShowChilds(node)"  ng-model="node.contacts" ng-class="{hidden: collapsed}">
+        <li  ng-repeat="node in node.contacts" ng-include="'nodes_renderer.html'">
+        </li>
+      </ul>
+    </script>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Contact Tree</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div >
+          <ul ng-model="data">
+            <li ng-repeat="node in data"  ng-include="'nodes_renderer.html'"></li>
+          </ul>
+        </div>
+      </div>
+
+    
+  </div>
+</div>
